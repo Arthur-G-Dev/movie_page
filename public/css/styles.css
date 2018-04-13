@@ -1,0 +1,12 @@
+input[type='file']{
+    display: inline;
+    width:100px;
+    color:transparent;
+}
+
+label{
+    display: inline;
+    /*color: white;*/
+}
+
+.add_movie_form .form-group{margin-bottom: 0}
