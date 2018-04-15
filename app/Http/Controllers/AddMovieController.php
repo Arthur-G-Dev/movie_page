@@ -81,7 +81,7 @@ class AddMovieController extends Controller
         foreach ($arr as $value) {
             $columnValueExists = DB::table($main_table)->where($column_val, $value)->get();
             if (count($columnValueExists) > 0) {
-               return null;
+
             } else {
                 DB::table($main_table)->insert([$column_val => $value]);
             }

@@ -23,3 +23,4 @@ Route::post('login', 'UserController@login');
 Route::get('logout', 'UserController@logout')->name('logout');
 
 Route::post('addNewMovie', 'AddMovieController@addMovie')->name('add_new_movie');
+Route::get('movieInfo/{movie_id}', 'SingleMovieController@getMovie');
