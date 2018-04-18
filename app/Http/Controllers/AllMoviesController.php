@@ -13,13 +13,8 @@ class AllMoviesController extends Controller
      */
     public function getAllMovies()
     {
+        $movies = DB::table('movies')->select('id', 'movie_name', 'poster')->paginate(2);
+        return view('allMovies')->with(['movies' => $movies]);
 
-
-        $val = Cache::remember('movies', 3, function(){
-            $movies = DB::table('movies')->select('id','movie_name','poster')->paginate(2);
-            return view('allMovies')->with(['movies' => $movies]);
-        });
-        dd($val);
-        return  $val;
     }
 }
