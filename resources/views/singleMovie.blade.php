@@ -10,7 +10,7 @@
         <div class='row solo'>
             <hr>
             <div class='movies  col-md-4'>
-                <h3>{{ $m->movie_name}}</h3>
+                <h3>{{ ucwords($m->movie_name)}}</h3>
                 @if(!empty($m->poster))
                     <img src="{{  URL::to('storage/posters/'.$m->poster)  }}" alt="">
                 @else
@@ -71,9 +71,29 @@
                     </tbody>
                 </table>
             </div>
-            <div class='col-md-12'>
-                <a class='backward_link' href=''>Back to Movie list</a>
+            <div class='col-md-12 text-right'>
+                <a class='backward_link' href='{{ url()->previous() }}'>Back to Movie list</a>
             </div>
         </div>
     @endforeach
+    <h4 class="text-center post_msg"></h4>
+    <section class="row new-post">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>What do you have to say</h3>
+            <form action="" method="post">
+                {!! csrf_field() !!}
+                <div class="form-group">
+                    <textarea name="body" id="new-post" cols="5" rows="5" class="form-control"
+                              placeholder="Your Post"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Post</button>
+            </form>
+        </div>
+    </section>
+<script>
+    var movie_id = "{{ $m->id }}";
+    var urlAddPost = "{{ Route('add_post') }}"
+</script>
+@include('includes.movie_posts')
 @endsection
+

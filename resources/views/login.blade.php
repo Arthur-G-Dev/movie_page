@@ -5,6 +5,17 @@
 @endsection
 
 @section('content')
+    @if(count($errors) > 0)
+        <div class="row err_container">
+            <div class="col-md-4 col-md-offset-4 error_register">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
 
     <div class="row">
         <div class="col-md-6">

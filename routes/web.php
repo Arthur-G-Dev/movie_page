@@ -17,10 +17,13 @@ Route::get('loginPage', function(){
    return view('login');
 })->name('login_page');
 
-
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
 Route::get('logout', 'UserController@logout')->name('logout');
 
 Route::post('addNewMovie', 'AddMovieController@addMovie')->name('add_new_movie');
-Route::get('movieInfo/{movie_id}', 'SingleMovieController@getMovie');
+Route::get('movieInfo/{movie_id}', 'SingleMovieController@getMovie')->name('movie_info');
+Route::get('filteredPage', 'FilteredMovieController@filterMovie')->name('filtered_list');
+
+Route::post('createPost', 'PostController@postCreatePost')->name('add_post');
+Route::post('addcomment/', 'PostController@addComment')->name('add_comment');

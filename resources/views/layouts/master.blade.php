@@ -12,9 +12,10 @@
 </head>
 <body>
 @include('includes.header')
-<div class="container">
+<div class="container" style="margin-bottom: 40px; height: 100vh">
     @yield('content')
 </div>
+@include('includes.footer')
 <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

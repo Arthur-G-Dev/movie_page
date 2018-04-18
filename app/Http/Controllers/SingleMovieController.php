@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SingleMovieController extends Controller
 {
+    /**
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getMovie($id){
         $movie_id = $id;
+
         $movie = DB::table('movies as m')->
         select(
             DB::raw('m.*, 
@@ -41,6 +48,17 @@ class SingleMovieController extends Controller
         where('m.id', '=', $movie_id)->
         get();
 
-         return view('singleMovie', ['movie' => $movie]);
+        $previous_url = url()->previous();
+        $posts = PostController::getAllPosts($movie_id);
+
+        $comments = new PostController;
+        $comments = $comments->getComments();
+
+         return view('singleMovie', [
+             'movie' => $movie,
+             'posts' => $posts,
+             'comments' => $comments,
+             'prev_url' => $previous_url
+         ]);
     }
 }

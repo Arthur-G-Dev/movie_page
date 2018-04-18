@@ -21,7 +21,7 @@
             {{Session::get('message')}}
         </div>
     @endif
-<form method="post" action="{{route('add_new_movie')}}" enctype="multipart/form-data">
+<form method="post" class="adder" action="{{route('add_new_movie')}}" enctype="multipart/form-data">
     {!! csrf_field() !!}
     <div class="row add_movie_form">
         <div class="form-group col-md-4">
@@ -49,6 +49,6 @@
         </div>
     </div>
     <br/>
-    <input type="submit" value="Post Message"/>
+    <input type="submit" class="form-control" value="Add Movie"/>
 </form>
 @endsection
