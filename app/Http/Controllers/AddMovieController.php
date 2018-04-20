@@ -52,7 +52,7 @@ class AddMovieController extends Controller
         $movie = new Movie();
         if (!empty($request['img'])) {
             $poster_name = $_FILES['img']['name'];
-            $request->file('img')->storeAs('posters', $poster_name);
+            $request->file('img')->storeAs('public/posters', $poster_name);
             $movie->poster = $poster_name;
         }
         $movie->movie_name = $mName;
@@ -81,16 +81,16 @@ class AddMovieController extends Controller
         return redirect(route('add_movie_page'))->with(['message' => $msg]);
     }
 
-    /**
-     * @param $input_val
-     * @param $column_val
-     * @param $main_table
-     * @param $connector_table
-     * @param $conn_table_column1
-     * @param $conn_table_column2
-     * @param $movie_ids
-     * helper for adding movie values to database
-     */
+        /**
+         * @param $input_val
+         * @param $column_val
+         * @param $main_table
+         * @param $connector_table
+         * @param $conn_table_column1
+         * @param $conn_table_column2
+         * @param $movie_ids
+         * helper for adding movie values to database
+         */
     private function universal_inserter($input_val, $column_val, $main_table, $connector_table, $conn_table_column1, $conn_table_column2, $movie_ids)
     {
         $universal_id_arr = [];

@@ -24,6 +24,12 @@
                     @else
                         <li><a href="{{ route('login_page') }}">LogIn/Register</a></li>
                     @endif
+                    <li>
+                        <form class="form-inline" action="{{ route('search_movie') }}" method="get">
+                            <input class="form-control" type="text" name="search" placeholder="Find movie">
+                            <input  type="submit" value="Search">
+                        </form>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

@@ -4,39 +4,59 @@ body {
     /*position: relative;*/
 }
 
-h1,h2,h3,p {color: #fff}
-
-header {border-bottom: 1px solid #fff;}
-header nav {
-    background-color: black;
-    margin-bottom: 0!important;
+h1, h2, h3, p {
+    color: #fff
 }
 
-.nav>li>a:focus, .nav>li>a:hover {
+header {
+    border-bottom: 1px solid #fff;
+}
+
+header nav {
     background-color: black;
+    margin-bottom: 0 !important;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: black;
+}
+
+.nav li form {
+    margin: 10px
+}
+
+.nav li form > input[name='search'] {
+    height: 30px
+}
+
+.nav li form > input[type='submit'] {
+    border: none;
+    background-color: cornflowerblue;
+    padding: 5px;
+    color: #fff;
 }
 
 .table {
     margin-top: 65px;
 }
 
-.table tr:nth-child(odd){
+.table tr:nth-child(odd) {
     background-color: black;
     color: white;
 }
 
-.table tr:nth-child(even){
+.table tr:nth-child(even) {
     background-color: white;
     color: black;
 }
 
-input[type='file']{
+input[type='file'] {
     display: inline;
-    width:100px;
-    color:transparent;
+    width: 100px;
+    color: transparent;
 }
 
-label{
+label {
     display: inline;
     color: white;
 }
@@ -48,12 +68,17 @@ label{
     border: none;
     padding: 10px;
     background-color: cornflowerblue;
-    color:  black;
+    color: black;
     cursor: pointer;
 }
 
-.add_movie_form {margin-top: 40px}
-.add_movie_form .form-group{margin-bottom: 0}
+.add_movie_form {
+    margin-top: 40px
+}
+
+.add_movie_form .form-group {
+    margin-bottom: 0
+}
 
 .img_wrapper {
     width: 100%;
@@ -66,7 +91,7 @@ label{
 }
 
 .movies a {
-    width:33%;
+    width: 33%;
     text-decoration: none;
     color: #fff;
     background-color: firebrick;
@@ -77,9 +102,13 @@ label{
     margin-top: 10px;
 }
 
-.movies img {width: 100%}
+.movies img {
+    width: 100%
+}
 
-.pagination_container {margin-top: 40px}
+.pagination_container {
+    margin-top: 40px
+}
 
 .pagination li a {
     background-color: firebrick;
@@ -92,12 +121,12 @@ label{
     border-color: firebrick;
 }
 
-.pagination>.active>span {
-    background-color: black!important;
-    border-color: firebrick!important;
+.pagination > .active > span {
+    background-color: black !important;
+    border-color: firebrick !important;
 }
 
-.pagination>.active>span:hover {
+.pagination > .active > span:hover {
     background-color: black;
     border-color: firebrick;
     cursor: pointer;
@@ -108,7 +137,7 @@ label{
     margin-bottom: 50px;
 }
 
- .filter input[type=number] {
+.filter input[type=number] {
     border: none;
     background-color: cornflowerblue;
     width: 25%;
@@ -120,13 +149,13 @@ label{
 .filter form select {
     border: none;
     background-color: cornflowerblue;
-    width: 25%!important;
+    width: 25% !important;
     margin: 10px;
     padding: 5px;
     color: white;
 }
 
-.filter input[type=submit]{
+.filter input[type=submit] {
     display: block;
     width: 15%;
     margin: 0 auto;
@@ -143,7 +172,9 @@ article {
     margin: 20px 0;
 }
 
-article p {color: black;}
+article p {
+    color: black;
+}
 
 article span {
     font-style: italic;
@@ -152,10 +183,20 @@ article span {
     margin-left: 20px;
 }
 
-article .comment_btn {color: #1b6d85; cursor: pointer; display: inline-block}
-article .comment {margin: 0; line-height: 1.1}
-article .comment_btn:hover {opacity: 0.7;}
+article .comment_btn {
+    color: #1b6d85;
+    cursor: pointer;
+    display: inline-block
+}
 
+article .comment {
+    margin: 0;
+    line-height: 1.1
+}
+
+article .comment_btn:hover {
+    opacity: 0.7;
+}
 
 .footer {
     width: 100%;
@@ -171,10 +212,17 @@ article .comment_btn:hover {opacity: 0.7;}
     text-align: center;
 }
 
-.success {color: #1c7430}
-.error {color: rgba(182,22,12,0.97)}
+.success {
+    color: #1c7430
+}
 
-.err_container {margin-top: 30px}
+.error {
+    color: rgba(182, 22, 12, 0.97)
+}
+
+.err_container {
+    margin-top: 30px
+}
 
 .error_register {
     border: 1px solid #ff0021;

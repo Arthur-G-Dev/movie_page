@@ -9,7 +9,6 @@
             @foreach($comments as $comment)
                 @if($post->id == $comment->post_id)
                     <p class="comment">{{ ucfirst($comment->comment) }}<span class="text-right">Posted By {{ $comment->user->first_name }}  {{ $comment->created_at->diffForHumans() }}</span></p>
-
                     <hr>
                 @endif
             @endforeach

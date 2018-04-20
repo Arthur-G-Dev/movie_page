@@ -24,6 +24,7 @@ Route::get('logout', 'UserController@logout')->name('logout');
 Route::post('addNewMovie', 'AddMovieController@addMovie')->name('add_new_movie');
 Route::get('movieInfo/{movie_id}', 'SingleMovieController@getMovie')->name('movie_info');
 Route::get('filteredPage', 'FilteredMovieController@filterMovie')->name('filtered_list');
+Route::get('searchedMovie', 'SearchMovieController@searchMovie')->name('search_movie');
 
 Route::post('createPost', 'PostController@postCreatePost')->name('add_post');
 Route::post('addcomment/', 'PostController@addComment')->name('add_comment');

@@ -16,7 +16,7 @@
                     @if(!empty($movie->poster))
                         <img src="{{  URL::to('storage/posters/'.$movie->poster)  }}" alt="">
                     @else
-                        <img src="{{  URL::to('storage/posters/default_poster.jpg')  }}" alt="">
+                        <img src="{{  URL::to('storage/posters/default_poster.jpg')  }}" alt="Default poster">
                     @endif
                 </div>
                 <a href='{{'movieInfo/'.$movie->id }}'>Full Description</a>

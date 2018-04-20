@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Comment;
 use App\User;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -17,13 +19,19 @@ class PostController extends Controller
      */
     public function postCreatePost(Request $request)
     {
+        $validate = Validator::make($request->all(), [ 'body' => 'required|min: 5']);
+
+            if($validate->fails()){
+                return response()->json(['errors' => $validate->errors()], 422);
+            }
+
         $post = new Post();
         $post->body = $request->get('body');
         $post->user_id = Auth::user()->id;
         $post->movie_id = $request['movieId'];
         $post->save();
 
-        return response()->json(['body' => $post->body]);
+        return response()->json(['body' => $post->body, 'validate' => $validate],200);
     }
 
     /**
@@ -44,8 +52,12 @@ class PostController extends Controller
      */
     public function addComment(Request $request)
     {
+        $validate = Validator::make($request->all(), [ 'comment' => 'required|min: 5']);
+        if($validate->fails()){
+            return response()->json(['errors' => $validate->errors()], 422);
+        }
 
-        $comment = $request['body'];
+        $comment = $request['comment'];
         $post_id = $request['postId'];
 
         $comments = new Comment();
@@ -54,8 +66,7 @@ class PostController extends Controller
         $comments->user_id = Auth::user()->id;
         $comments->save();
 
-
-        return response()->json(['res' => $comments->comment]);
+        return response()->json(['res' => $comments->comment ],200);
     }
 
     /**
